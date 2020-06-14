@@ -17,7 +17,7 @@ public class Application {
     @EventListener({ApplicationReadyEvent.class})
     void applicationReadyEvent() {
         System.out.println("Application started ... launching browser now");
-        //browse("http://localhost:8080/hello");
+        //browse("http://localhost:8080");
     }
 
     public static void browse(String url) {

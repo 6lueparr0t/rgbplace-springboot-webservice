@@ -1,4 +1,7 @@
 spring:
+    mvc:
+        favicon:
+            enabled: false
     jpa:
         show_sql: true
         properties:
