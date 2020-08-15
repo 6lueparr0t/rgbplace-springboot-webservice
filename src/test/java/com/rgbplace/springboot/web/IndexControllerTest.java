@@ -1,7 +1,11 @@
 package com.rgbplace.springboot.web;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -16,6 +20,8 @@ public class IndexControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+
     @Test
     public void 메인페이지_로딩() {
         //when
@@ -23,5 +29,17 @@ public class IndexControllerTest {
 
         //then
         assertThat(body).contains("스프링 부트로 시작하는 웹 서비스");
+    }
+
+    @Test
+    public void Json타입_리턴() throws Exception {
+        String transId = "\"vnblqoeir1020301294010\"";
+
+        try {
+            JSONObject jsonObject = new JSONObject("{\"transId\":"+transId+"}");
+            log.info("test : {}", jsonObject);
+        }catch (JSONException err){
+            log.info("Error : {}", err.toString());
+        }
     }
 }
