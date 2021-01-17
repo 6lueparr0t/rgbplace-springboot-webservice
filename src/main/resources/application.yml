@@ -1,4 +1,6 @@
 spring:
+    profiles :
+        include : oauth
     mvc:
         favicon:
             enabled: false
@@ -8,6 +10,8 @@ spring:
             hibernate:
                 dialect: org.hibernate.dialect.MySQL5InnoDBDialect
                 storage_engine: innodb
+    session:
+        store-type: jdbc
     h2:
         console:
             enabled: true

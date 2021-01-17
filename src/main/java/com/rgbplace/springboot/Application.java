@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-@EnableJpaAuditing
+// @EnableJpaAuditing 삭제됨
 @SpringBootApplication
 public class Application {
     @EventListener({ApplicationReadyEvent.class})
