@@ -1,6 +1,6 @@
 spring:
-    profiles :
-        include : oauth
+    profiles:
+        include: oauth
     mvc:
         favicon:
             enabled: false
